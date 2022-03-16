@@ -17,7 +17,7 @@ import (
 var getCmd = &cobra.Command{
 	Use:   "get",
 	Short: "This command will get the desired Gopher",
-	Long:  `This get command will call GitHub respository in order to return the desired Gopher.`,
+	Long:  `This get command will call GitHub repository in order to return the desired Gopher.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var name = "dr-who.png"
 
@@ -36,7 +36,7 @@ var getCmd = &cobra.Command{
 		}
 		defer response.Body.Close()
 
-		if response.StatusCode == 200 {
+		if response.StatusCode == http.StatusOK {
 			// Create the file
 			file, err := os.Create(name + ".png")
 			if err != nil {

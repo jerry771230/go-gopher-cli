@@ -84,7 +84,30 @@ Try to get 'awesome' Gopher...
 Error: awesome not exists! :-(
 ```
 
+## Build app
 
+```bash
+$ task build
+task: [build] GOFLAGS=-mod=mod go build -o bin/gopher-cli main.go
+```
+
+Test the executable binary,
+
+```bash
+$ ./bin/gopher-cli get 5th-element
+Try to get '5th-element' Gopher...
+Perfect! Just saved in 5th-element.png!
+
+$ file 5th-element.png
+5th-element.png: PNG image data, 1338 x 590, 8-bit/color RGBA, non-interlaced
+```
+
+Clean all *.png files
+
+```bash
+$ task clean
+task: [clean] rm *.png
+```
 
 
 ## Ref
